@@ -1,0 +1,185 @@
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+  }
+  
+  input::-moz-focus-inner,
+  button::-moz-focus-inner {
+    border: 0;
+  }
+  
+  html,
+  body,
+  div,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  img,
+  ol,
+  ul,
+  li,
+  form,
+  button,
+  label,
+  table,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section,
+  summary,
+  time,
+  video {
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    border: 0;
+  }
+  
+  main,
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0 0 20px;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+  }
+  
+  h3 {
+    font-size: 1.17em;
+  }
+  
+  h4 {
+    font-size: 1.12em;
+  }
+  
+  h5 {
+    font-size: 0.83em;
+  }
+  
+  h6 {
+    font-size: 0.75em;
+  }
+  
+  a,
+  a:focus,
+  a:active {
+    color: inherit;
+    outline: none;
+    text-decoration: none;
+  }
+  
+  ul {
+    margin-bottom: 0px;
+    list-style: none;
+  }
+  
+  p {
+    margin-bottom: 0;
+    padding: 0;
+  }
+  
+  img {
+    max-width: 100%;
+    border-style: none;
+    outline: none;
+  }
+  
+  details summary::-webkit-details-marker {
+    display:none;
+  }
+  
+  details summary:focus {
+    outline: none;
+  }
+  
+  input::-moz-focus-inner,
+  button::-moz-focus-inner {
+    border: 0;
+  }
+  
+  input {
+    &::-ms-clear {
+      display: none;
+    }
+  }
+  
+  input,
+  button {
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  textarea {
+    overflow: auto;
+    resize: none;
+  }
+  
+  strong {
+    font-weight: bold;
+  }
+  
+  label,
+  button {
+    cursor: pointer;
+  }
+  
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+  }

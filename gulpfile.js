@@ -1,103 +1,61 @@
-const {src, dest, watch, parallel, series}  = require('gulp');
+const gulp = require('gulp'),
+  sass = require('gulp-sass'),
+  browsersync = require('browser-sync').create(),
+  prettify = require('gulp-prettify'),
+  kit = require('gulp-kit');
 
-const scss         = require('gulp-sass'); // вся мощь плагина scss передается в переменную scss
-
-const concat       = require('gulp-concat');
-
-const browserSync  = require('browser-sync').create();
-
-const uglify       = require('gulp-uglify-es').default;
-
-const autoprefixer = require('gulp-autoprefixer');
-
-const imagemin     = require('gulp-imagemin');
-
-const del          = require('del');
-
-
-
-
-
-
-function browsersync () {
-    browserSync.init({
-        server : {
-            baseDir: 'app/'
-        }
-    })
+function gulpSass() {
+  return gulp
+    .src('./scss/**/*.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('./css'));
 }
 
-function cleanDist() {
-    return del('dist')
+function buildKit() {
+  return gulp
+    .src('./kit/*.kit')
+    .pipe(kit())
+    .pipe(gulp.dest('./build'));
 }
 
-function images() {
-    return src ('app/images/**/*')
-    .pipe(imagemin([
-        imagemin.gifsicle({interlaced: true}),
-        imagemin.mozjpeg({quality: 75, progressive: true}),
-        imagemin.optipng({optimizationLevel: 5}),
-        imagemin.svgo({
-            plugins: [
-                {removeViewBox: true},
-                {cleanupIDs: false}
-            ]
-        })
-    ]))
-    .pipe(dest('dist/images'))
+function serve(done) {
+  browsersync.init({
+    server: {
+      baseDir: "./"
+    },
+    notify: false
+  }, done);
 }
 
-function scripts () {
-    return src([
-        'node_modules/jquery/dist/jquery.js',
-        'app/js/main.js'
-    ])
-    .pipe(concat('main.min.js'))
-    .pipe(uglify())
-    .pipe(dest('app/js'))
-    .pipe(browserSync.stream())
-    
+function reload(done) {
+  browsersync.reload();
+  done();
 }
 
-
-function styles() {
-    return src('app/scss/style.scss')
-        .pipe(scss({outputStyle: 'compressed'}))
-        .pipe(concat('style.min.css'))
-        .pipe(autoprefixer({
-            overrideBrowserslist: [' last 10 version'],
-            grid: true
-        }))
-        .pipe(dest('app/css'))
-        .pipe(browserSync.stream())
+function prettifyFunc() {
+  return gulp
+    .src('./build/**/*.html')
+    .pipe(prettify({
+      indent_size: 1,
+    }))
+    .pipe(gulp.dest('./'));
 }
 
+const compile = gulp
+  .series(
+    gulp.parallel(
+      gulp.series(
+        prettifyFunc,
+      ),
+      gulpSass,
+    ),
+    serve,
+  );
 
-function build() {
-    return src([
-        'app/css/style.min.css',
-        'app/fonts/**/*',
-        'app/js/main.min.js',
-        'app/*.html'
-    ], {base:'app'} )
-    .pipe(dest('dist'))
+function watchFiles() {
+  gulp.watch('./scss/**/*.scss', gulp.series(gulpSass, reload));
+  gulp.watch('./kit/**/*.kit', gulp.series(buildKit, prettifyFunc, reload));
+  gulp.watch('*.js', gulp.series(reload));
 }
 
-
-
-
-function watcheng() {
-    watch(['app/scss/**/*.scss'], styles);// следить за всеми папками и файлами с расширением scss и запускал функцию
-    watch(['app/js/**/*.js','!app/js/main.min.js'], scripts);
-    watch(['app/*.html']).on('change',browserSync.reload);
-}
-
-exports.styles = styles;
-exports.watching = watcheng;
-exports.browsersync = browsersync
-exports.scripts = scripts;
-exports.images = images;
-exports.cleanDist = cleanDist;
-
-exports.build = series(cleanDist,images,build)
-exports.default = parallel(styles,scripts,browsersync,watcheng);
+exports.watch = gulp.series(compile, watchFiles);
