@@ -1,4 +1,5 @@
  /**  HELPER    **/
+ @import "./helpers/variables";
 
 
 
@@ -10,8 +11,11 @@
 
 
  /**  COMPONENTS   **/
-
+ 
+ @import "./components/logo";
+ @import "./components/nav";
 
 
 
  /**  LAYOUT  **/
+ @import "./layout/header";
