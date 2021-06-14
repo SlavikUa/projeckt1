@@ -1,6 +1,6 @@
 .advern {
     width: 100%;
-    min-height: 800px;
+    min-height: 670px;
     position: relative;
     top: 0;
     left: 0;
@@ -21,7 +21,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    margin: 10px 20px;
+    margin: 10px 10px;
     position: relative;
     grid-area: big; // имя грид элемента для растановки
     &:hover::after {

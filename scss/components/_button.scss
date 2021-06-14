@@ -1,0 +1,11 @@
+.big-button {
+    padding: 8px 35px; /* внутренний отступ */
+    background: transparent; /* прозрачный фон */
+    border: 2px solid #ffffff;  /* рамка */
+    border-radius: 20px;  /* закругление рамки */
+    color: #ffffff;  /* цвет рамки */
+    outline: none;  /* убераем заводскую рамку при клике на кнопку */
+    cursor: pointer; /* при навидении меняется курсор */
+    font-size: 12px; /* текст в нутри */
+    font-weight: bold; /* жирный текст */
+}
