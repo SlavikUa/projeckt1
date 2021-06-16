@@ -17,6 +17,7 @@
     height: 600px;
     border: $secondColor solid 6px;
     border-radius: 20px;
+    box-shadow: 0 0 10px rgba(8, 8, 8, 1);
     background-image: url(/img/f63a289d4bccf82b9f2d9d5b2963ab13.png);
     background-repeat: no-repeat;
     background-position: center center;
@@ -41,6 +42,7 @@
     height: 350px;
     border: $secondColor solid 6px;
     border-radius: 20px;
+    box-shadow: 0 0 10px rgba(8, 8, 8, 1);
     background-image: url(/img/ttzscy4je42s71m1w7xlmw8036w.jpeg);
     background-repeat: no-repeat;
     background-position: center center;
@@ -48,6 +50,7 @@
     margin: 10px 20px;
     position: relative;
     grid-area: midle; // имя грид элемента для растановки
+
     &:hover::after {
         content: "";
         position: absolute;
@@ -68,6 +71,7 @@
     height: 225px;
     border: $secondColor solid 6px;
     border-radius: 20px;
+    box-shadow: 0 0 10px rgba(8, 8, 8, 1);
     background-image: url(/img/618346644.jpg);
     background-repeat: no-repeat;
     background-position: center center;
