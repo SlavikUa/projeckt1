@@ -1,0 +1,1 @@
+const imeges = document.querySelectorAll('.slaider-line img');
