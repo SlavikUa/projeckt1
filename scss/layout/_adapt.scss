@@ -5,6 +5,7 @@
     background-color: $titleTextColor;
     border-radius: 20px;
     padding: 20px 0;
+    position: relative;
 
 
 }
@@ -14,12 +15,14 @@
     max-width: 80%;
     border-radius: 20px;
     overflow: hidden; 
+    
 
 }
 
 .slaider-line {
     display: flex;
     transition: all ease 1s;
+    
 }
 
 
@@ -32,6 +35,29 @@
 
 
 
-.adapt-content-buttons {
-
+.adapt-content-buttons { 
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
 }
+
+.slaider-button-prev {
+    margin-left: 20px;
+}
+
+.slaider-button-next {
+    margin-right: 20px;
+}
+
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
