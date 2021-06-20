@@ -1,0 +1,40 @@
+.object {
+
+}
+
+.object-content {
+    background-color: $primaryColot;
+    display: flex;
+}
+
+.object-content-img {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    max-width: 50%;
+}
+
+.object-content-img img {
+    height: 170px;
+    width: 287px;
+    border-radius: 20px;
+
+}
+
+.object-content-info {
+    width: 48%;
+    margin-left: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: $titleTextColor;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.active {
+    box-shadow: 0 0 10px rgb(14, 13, 13);
+}
