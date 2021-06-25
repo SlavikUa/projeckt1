@@ -4,92 +4,51 @@
     position: relative;
     top: 0;
     left: 0;
-    margin: 120px 0 0 0;
+    margin: 120px 0 20px 0;
 }
 .advern-content {
+    height: 700px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
     grid-template-areas: "big midle" "big small"; // расположение грид элементов
 }
 
 .advern-big {
-    width: 600px;
-    height: 600px;
-    border: $secondColor solid 6px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(8, 8, 8, 1);
     background-image: url(/img/f63a289d4bccf82b9f2d9d5b2963ab13.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    margin: 10px 10px;
-    position: relative;
     grid-area: big; // имя грид элемента для растановки
-    &:hover::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: rgba(86, 86, 86, 0.3);
-        left: 0;
-        top: 0;
-        
-
-    }
 }
+
 .advern-midle {
-    width: 500px;
-    height: 350px;
-    border: $secondColor solid 6px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(8, 8, 8, 1);
     background-image: url(/img/ttzscy4je42s71m1w7xlmw8036w.jpeg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    margin: 10px 20px;
-    position: relative;
     grid-area: midle; // имя грид элемента для растановки
-
-    &:hover::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: rgba(86, 86, 86, 0.3);
-        left: 0;
-        top: 0;
-        
-
-    }
-
-
-
 }
+
 .advern-small {
-    width: 500px;
-    height: 225px;
+    background-image: url(/img/618346644.jpg);
+    grid-area: small; // имя грид элемента для растановки
+}
+
+.advern-block {
+    width: 100%;
+    height: 100%;
     border: $secondColor solid 6px;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(8, 8, 8, 1);
-    background-image: url(/img/618346644.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    margin: 10px 20px;
+    // margin: 10px 20px;
     position: relative;
-    grid-area: small; // имя грид элемента для растановки
-    &:hover::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: rgba(86, 86, 86, 0.3);
-        left: 0;
-        top: 0;
-        
-
+    &:hover {
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(86, 86, 86, 0.3);
+            left: 0;
+            top: 0;
+        }
     }
-
-
 }
