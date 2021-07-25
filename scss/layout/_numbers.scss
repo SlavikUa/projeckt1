@@ -6,4 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    border: solid 6px $titleTextColor;
+    border-radius: 20px;
+    padding: 15px 0;
 }

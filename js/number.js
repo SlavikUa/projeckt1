@@ -5,6 +5,8 @@ let counter = 0;
 
 let counterV = 0;
 
+let counterC = 0;
+
 
 let timeIdNumber = setInterval( ()=> {
 
@@ -14,7 +16,7 @@ let timeIdNumber = setInterval( ()=> {
     if ( counter >= 1695) {
         clearTimeout(timeIdNumber);
     }
-}, 10);
+}, 9);
 
 let counterVisitors = document.querySelector('.counter-visitors');
 
@@ -27,6 +29,16 @@ let timeIdVisitors = setInterval ( ()=> {
         clearTimeout(timeIdVisitors);
     }
 
-}, 10);
+}, 11);
 
+let conversion = document.querySelector('.counter-conversion');
+
+let timeIdConversion = setInterval( ()=> {
+    conversion.innerHTML = counterC;
+    counterC++;
+
+    if (counterC >= 1740) {
+        clearTimeout(timeIdConversion);
+    }
+}, 5)
 
